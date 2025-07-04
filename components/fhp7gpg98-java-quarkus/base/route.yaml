@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: fhp7gpg98-java-quarkus
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: fhp7gpg98-java-quarkus 
+  name: fhp7gpg98-java-quarkus
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: fhp7gpg98-java-quarkus
+    weight: 100 
